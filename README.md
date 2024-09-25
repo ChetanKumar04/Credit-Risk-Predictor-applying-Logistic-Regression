@@ -1,40 +1,68 @@
-# Credit-Risk-Predictor-applying-Logistic-Regression
-This project utilizes logistic regression to develop a credit risk classification model, analyzing various factors to predict the likelihood of loan default. The model aims to provide lenders with a reliable tool for assessing borrower creditworthiness, minimizing risk exposure, and optimizing lending strategies.
+**Credit Risk Classification Using Logistic Regression: A Data-Driven Approach**
 
-## Purpose
-The purpose of this analysis is to generate a model that will be able to correctly identify 'healthy loan' and 'high risk loan' applicants based on application factors which include loan size, interest rate, borrower income, debt to income ratio, number of accounts, pre-defined derogetory marks, and total debt. We will then test this model to determine how effective it is at classifying both categories.
+This project leverages logistic regression to build a predictive model that classifies loan applicants based on credit risk. The goal is to accurately distinguish between low-risk (healthy) and high-risk loan applicants, using a set of key financial indicators. This model serves as a decision-making tool for lenders, helping to minimize loan defaults and optimize lending strategies.
 
-## Process
-For this analysis, I generated and tested two models. 
-The first model was generated with original data. This dataset was highly imbalanced with a significant majority of 'healthy loans' (75,036) compared to 'high risk loans' (2,500). I split this model into Training and Test sets and generated a Logistic Regression model. I then generated confucion matrices and tested its accuracy, precision and recall for both the training and test sets.
+**Objective**
+The primary goal of this analysis is to create a model that can reliably predict whether an applicant falls into the ‘healthy loan’ or ‘high-risk loan’ category. The model is built using various financial factors, such as:
 
-<img width="562" alt="Model 1 Confusion Matrix" src="https://github.com/NeonOstrich/Polling-and-Banking-Data-Analysis-in-Python/assets/119632669/0b26c071-f4cc-458a-8e57-e2da40950db4">
-<img width="601" alt="Model 1 Classification Report" src="https://github.com/NeonOstrich/Polling-and-Banking-Data-Analysis-in-Python/assets/119632669/066e34ad-5612-49a3-a3cc-da7f5665eafa">
+Loan amount
+Interest rate
+Borrower’s income
+Debt-to-income ratio
+Number of existing accounts
+Predefined derogatory marks
+Total outstanding debt
+The performance of the model will be evaluated in terms of its ability to accurately classify these categories, focusing on precision, recall, and overall accuracy.
 
-For the second model, I used resampled data instead of original data. This allowed me to have a dataset with an equal number of 'healthy loans' and 'high risk loans' with which to train my model. There were 56,271 of each type in the resampled dataset. I split this model into Training and Test sets and generated a Logistic Regression model. I then generated confucion matrices and tested its accuracy, precision and recall for both the training and test sets.
+**Methodology**
+Two different models were developed and tested:
 
-<img width="583" alt="Model 2 Confusion Matrix" src="https://github.com/NeonOstrich/Polling-and-Banking-Data-Analysis-in-Python/assets/119632669/c3d1dbef-b84b-499c-8f77-10eb12bae809">
-<img width="617" alt="Model 2 Classification Report" src="https://github.com/NeonOstrich/Polling-and-Banking-Data-Analysis-in-Python/assets/119632669/3eb9bcc7-08e0-415c-b311-779d464c2169">
+**Model 1: Original Data (Imbalanced Dataset)**
 
-## Results
+The dataset was initially imbalanced, consisting of approximately 97% healthy loans (75,036 records) and only 3% high-risk loans (2,500 records).
+The data was split into training and testing sets, and a logistic regression model was trained on this imbalanced dataset.
+Performance was assessed using confusion matrices, evaluating accuracy, precision, and recall.
 
-Machine Learning Model 1 (with original data):
-  * Test Data Balanced Accuracy: 99%
-  * Test Data Precision for 'healthy loans': 100%
-  * Test Data Precision for 'high risk loans': 85%
-  * Test Data Recall for 'healthy loans': 99%
-  * Test Data Recall for 'high risk loans': 91%
-  
-Machine Learning Model 2 (with resampled data):
-  * Test Data Balanced Accuracy: 99%
-  * Test Data Precision for 'healthy loans': 99%
-  * Test Data Precision for 'high risk loans': 99%
-  * Test Data Recall for 'healthy loans': 99%
-  * Test Data Recall for 'high risk loans': 99%
-  
-## Summary
+**Model 2: Resampled Data (Balanced Dataset)**
 
-The first Logistic Regression model, using original data, does very well at predicting 'healthy loans' with accuracy, precision and recall close to 100%. It still does well, but performs noticably worse at identifying high-risk loans where it has a precision of 85% and a recall of 91%. This suggests that this model is less able to classify high risk loans than healthy loans. This is likely related to the skew in the data that was provided, with only about 3 percent of the sample being in the high risk loans category.
-The second Logistic Regression model that uses resampled data, performs noticably better at identifying high risk loans in addition to identifying healthy loans. The overall prediction rate is consistent across precision, recall, and accuracy.
-We would recommend utilizing the second model because of its heightened ability to detect 'high risk loans' accurately. This is especially important given how much it can cost a loan provider to misidentify and lend money to a 'high risk loan' applicant, and the minimal cost of misidentifying a 'healthy loan' applicant. The first model is slightly better at identifying 'healthy loan' applicants, but this is less important than correctly identifying 'high risk loan' applicants, which is accomplished better with the second model.
+To address the imbalance, the dataset was resampled, creating an equal number of healthy loans and high-risk loans (56,271 records for each category).
+The logistic regression model was retrained on this balanced data, followed by the same evaluation using confusion matrices, precision, recall, and accuracy.
+
+**Analysis Results**
+Here’s how both models performed:
+
+**Model 1 (Original Imbalanced Data)**
+
+Balanced Accuracy: 99% on test data
+Precision for Healthy Loans: 100%
+Precision for High-Risk Loans: 85%
+Recall for Healthy Loans: 99%
+Recall for High-Risk Loans: 91%
+
+**Model 2 (Resampled Balanced Data)**
+
+Balanced Accuracy: 99% on test data
+Precision for Healthy Loans: 99%
+Precision for High-Risk Loans: 99%
+Recall for Healthy Loans: 99%
+Recall for High-Risk Loans: 99%
+
+**Key Findings**
+
+**Model 1 (Imbalanced Dataset):** 
+While this model excelled at identifying healthy loans (with precision and recall near 100%), it struggled with classifying high-risk loans. The lower precision and recall for high-risk loans (85% precision, 91% recall) reflect the impact of the imbalanced dataset. The model tends to predict fewer high-risk loans accurately, which could lead to missed opportunities in risk mitigation for lenders.
+
+**Model 2 (Resampled Dataset):** 
+By balancing the dataset, the second model significantly improved its ability to classify high-risk loans. With precision and recall both reaching 99% for both loan categories, this model offers a far more consistent and accurate prediction, making it highly valuable for identifying risky applicants.
+
+**Conclusion & Recommendations**
+
+The second model, which uses the resampled dataset, outperforms the first model, especially in identifying high-risk loan applicants. This model is particularly valuable because of the high financial cost of misclassifying a high-risk loan as healthy, compared to the relatively low cost of misclassifying a healthy loan as risky. The ability to better identify high-risk applicants directly translates into reduced default rates and optimized lending strategies, making the resampled model the more effective choice for credit risk assessment.
+
+This project illustrates the power of logistic regression in tackling real-world financial problems, especially when dataset imbalances are addressed. By resampling the data, we were able to improve predictive performance and deliver a more reliable tool for lenders.
+
+
+
+
+
 
