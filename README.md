@@ -5,13 +5,14 @@ This project leverages logistic regression to build a predictive model that clas
 **Objective**
 The primary goal of this analysis is to create a model that can reliably predict whether an applicant falls into the ‘healthy loan’ or ‘high-risk loan’ category. The model is built using various financial factors, such as:
 
-Loan amount
-Interest rate
-Borrower’s income
-Debt-to-income ratio
-Number of existing accounts
-Predefined derogatory marks
-Total outstanding debt
+*Loan amount
+*Interest rate
+*Borrower’s income
+*Debt-to-income ratio
+*Number of existing accounts
+*Predefined derogatory marks
+*Total outstanding debt
+
 The performance of the model will be evaluated in terms of its ability to accurately classify these categories, focusing on precision, recall, and overall accuracy.
 
 **Methodology**
